@@ -65,7 +65,7 @@ I-  BASE DE DONNEES:
 
 
 II- Page d'accueil : 
-    1-  message de bien venu et de présentation 
+    1-  message de bienvenue et de présentation 
     2-  formulaire de connection ou d'identification ===> vers la page de visualisation 
 
 
@@ -110,7 +110,7 @@ IV-    Page d'administration :
 v-  SPLITS (pour gestion de projet): 
 
     1-  split1 (durée = ):
-        *   définition des paramètres des tables de la bd (clés, types, etc...)
+        *   définition d	es paramètres des tables de la bd (clés, types, etc...)
         *   définition des relations entre les tables
         *   construction de la Bd (fichier sql)
         *   création des enregistrements de test (introduire des enregistrement dans chaque table )
@@ -126,9 +126,13 @@ v-  SPLITS (pour gestion de projet):
     2-  split2(durée = ): 
         *   mise en forme la pages d'acceuil (prendre en compte l'accessibilité) incluant : 
             -   recherche de contenu (text, message d'acceuil, images, video , logo, etc )  
+			-	Trouver le logo de Eqla
+			-	Demender à Jonny les photos de classe
             -   formulaire de connection 
+			-	Adresse mail + mot de passe 
             -   codage en html + css + js de la page d'accueil 
         *   mise en forme de la page d'affichache de l'emploi de temps (accessible) en html, css, js :
+		-	Si on a du temps on le présente en tableau 
             -   rechercher du contenu pour cette page (text, photos, video, etc ) 
             -   titres 
             -   simulation d'un emploi de temps sur un ou deux mois  
