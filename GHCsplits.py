@@ -7,7 +7,16 @@
     - VsCode (Ide = environnement de développement )
     - MYSQLconnector (Module python pour la connection au SGBD MYSQL)
     - Django (Module Python pour le web )
-    - Langages : Python , sql, html, css, sass, js
+    - Langages : Python , sql, html, css, sass, js, Bootstrap
+    - Sites web:
+        *   https://www.oberlo.fr/outils/generateur-slogan (pour la générer des slogans)
+        *   https://www.remove.bg/ (pour traitement d'arrière plan d'image "logo")
+        *   http://eqla.ddns.net/  ( clin d'oeil à johnny)
+        *   https://eqla.be/  (collecte d'infos sur eqla)
+        *   https://icons.getbootstrap.com/?    (pour les icones bootstrap)
+        *   https://openclassrooms.com/fr/courses/4425076-decouvrez-le-framework-django (pour les notions sur django )
+        *   https://colorlib.com/   (pour s'inspirer des templates bootstap)
+        *   https://getbootstrap.com/docs/5.1/getting-started/introduction/  (documentation bootstrap)
 
 
 I-  BASE DE DONNEES:
