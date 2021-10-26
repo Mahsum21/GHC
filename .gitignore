@@ -5,6 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
+# Personnal doc
+BD/
 
 # Distribution / packaging
 .Python
