@@ -1068,19 +1068,19 @@ h3, .tit {
 }
 
 /* line 108, ../../Arafath/CL/December/234. Finance/HTML/scss/_header.scss */
-.header-area .main-header-area .Appointment .socail_links ul li {
+.header-area .main-header-area .Appointment .social_links ul li {
   display: inline-block;
 }
 
 /* line 111, ../../Arafath/CL/December/234. Finance/HTML/scss/_header.scss */
-.header-area .main-header-area .Appointment .socail_links ul li a {
+.header-area .main-header-area .Appointment .social_links ul li a {
   color: #A8A7A0;
   margin: 0 10px;
   font-size: 15px;
 }
 
 /* line 115, ../../Arafath/CL/December/234. Finance/HTML/scss/_header.scss */
-.header-area .main-header-area .Appointment .socail_links ul li a:hover {
+.header-area .main-header-area .Appointment .social_links ul li a:hover {
   color: #fff;
 }
 
@@ -2869,6 +2869,8 @@ p #amount {
   color: #040E27;
   text-transform: capitalize;
   margin-bottom: 40px;
+  width: 10px;
+  height: 10px;
 }
 
 @media (max-width: 767px) {
@@ -3038,19 +3040,19 @@ p #amount {
 }
 
 /* line 168, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-.footer .socail_links {
+.footer .social_links {
   margin-top: 47px;
 }
 
 @media (max-width: 767px) {
   /* line 168, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-  .footer .socail_links {
+  .footer .social_links {
     margin-top: 30px;
   }
 }
 
 /* line 174, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-.footer .socail_links ul li {
+.footer .social_links ul li {
   display: inline-block;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -3059,7 +3061,7 @@ p #amount {
 }
 
 /* line 177, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-.footer .socail_links ul li a {
+.footer .social_links ul li a {
   font-size: 15px;
   width: 40px;
   height: 40px;
@@ -3083,7 +3085,7 @@ p #amount {
 }
 
 /* line 193, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-.footer .socail_links ul li a i {
+.footer .social_links ul li a i {
   font-size: 15px;
   line-height: 40px;
   position: relative;
@@ -3091,7 +3093,7 @@ p #amount {
 }
 
 /* line 201, ../../Arafath/CL/December/234. Finance/HTML/scss/_footer.scss */
-.footer .socail_links ul li:hover a {
+.footer .social_links ul li:hover a {
   color: #fff !important;
   background: #0A8CFF;
   border-color: transparent;
