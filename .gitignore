@@ -7,7 +7,8 @@ __pycache__/
 *.so
 # Personnal doc
 BD/
-
+BD/*
+/BD
 # Distribution / packaging
 .Python
 build/
