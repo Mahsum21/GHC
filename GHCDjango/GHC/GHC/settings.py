@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'GHC.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blindcode',
+        'NAME': 'ghcdb',
         'USER': 'root',
-        'PASSWORD': 'isaac', 
+        'PASSWORD': input("mot de passe: "), 
         'HOST': 'localhost', 
         'PORT': '3306'
     }
