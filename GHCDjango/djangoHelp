@@ -1,0 +1,41 @@
+A-  activer l'environnement 
+    $ .\MyFirstEnv\Scripts\Activate 
+B-  lancer le server django 
+    $ python manage.py runserver
+--------------------------------------------------------
+1-  créer un repertoire de travail : 
+    $ mkdir djangoWS
+2-  ouvrir le repertoire de travail 
+    $ cd djangoWS
+3-  installer un environnement de travail 
+    $ pip install virtualenv
+4-  creer un environnement virtuel 
+    $ virtualenv -p python3 MyFirstEnv
+5-  creer un repertoire pour un projet
+    $ mkdir MyFirstProject
+6-  pour activer l'environnement 
+    $ .\MyFirstEnv\Scripts\Activate 
+7-  pour ouvrit le repertoire de travail 
+    $ cd MyFirstProject
+8-  installer django  
+    $ pip install django
+    $ pip freeze (visualiser les packets installés)
+    $ python -m django --version (pour connaitre la version de django)
+9-  creer un projet django 
+    $ django-admin startproject TestProject
+10- ouvrir le projet django 
+    $ cd TestProject
+11- installer mysqlclient 
+    $ pip install mysqlclient
+12- installer les migrations 
+    $ python manage.py migrate
+    $ manage.py migrate
+13- creer une application django 
+    $ django-admin startapp MyfirstApp
+14- installer la debug toolsbar
+    $ pip install django-debug-toolbar
+15- configurer les fichiers settings.py 
+    (via un IDE tel que VScode)
+16- lancer le server django 
+    $ python manage.py runserver
+
