@@ -90,5 +90,5 @@ VALUES('tcheuyassi', 'Isaac', 'test', 'eleve', 'admin', test',  '2021/12/12'),
 ('simonbaby', 1, '2021/12/12');
 */
 
-select * from score;
+select * from personnes;	
 
