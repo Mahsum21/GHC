@@ -81,14 +81,11 @@ CREATE TABLE horaires(
 	);
 
 
-/*
-INSERT INTO personnes(nom, prenom, email, fonction, statut, mdp, photoProfil, dateEnregistrement)
-VALUES('tcheuyassi', 'Isaac', 'test', 'eleve', 'admin', test',  '2021/12/12'),
-('simonmom', 15, '2021/12/12'), 
-('simonson', 10, '2021/12/12'), 
-('simonsister', 5, '2021/12/12'), 
-('simonbaby', 1, '2021/12/12');
-*/
+
+INSERT INTO personnes(nom, prenom, email, fonction, statut, mdp, dateEnregistrement)
+VALUES('tcheuyassi', 'Isaac', 'test', 'eleve', 'admin', 'test',  '2021/12/12'),
+('Kizmaz', 'Mahsum', 'mahsumkizmaz@gmail.com', 'eleve', 'admin', 'test',  '2021/01/11');
+
 
 select * from personnes;	
 
