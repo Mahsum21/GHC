@@ -17,9 +17,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.urls.resolvers import URLPattern
+from Connection import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    re_path(r'^$/', views.Index),
 ]
 if settings.DEBUG : 
     import debug_toolbar
