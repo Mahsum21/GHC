@@ -28,7 +28,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Connection.apps.ConnectionConfig', 
     'Horaires.apps.HorairesConfig', 
+    'Admin.apps.AdminConfig', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

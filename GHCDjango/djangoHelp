@@ -2,6 +2,8 @@ A-  activer l'environnement
     $ .\MyFirstEnv\Scripts\Activate 
 B-  lancer le server django 
     $ python manage.py runserver
+    $ ./manage.py runserver
+
 --------------------------------------------------------
 1-  créer un repertoire de travail : 
     $ mkdir djangoWS
@@ -11,6 +13,7 @@ B-  lancer le server django
     $ pip install virtualenv
 4-  creer un environnement virtuel 
     $ virtualenv -p python3 MyFirstEnv
+    $ virtualenv env -p python3  (deuxieme méthode à tester)
 5-  creer un repertoire pour un projet
     $ mkdir MyFirstProject
 6-  pour activer l'environnement 
