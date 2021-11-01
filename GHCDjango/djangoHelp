@@ -42,3 +42,14 @@ B-  lancer le server django
 16- lancer le server django 
     $ python manage.py runserver
 
+------------------------------------------------------------------
+commandes supplémentaires installées : 
+    $ python -m pip install Pillow (à permis de prendre en compte les classes de models)
+    $ python manage.py makemigrations (pour générer les migrations automatiquement)
+    $ python manage.py migrate (pour executer les migrations) 
+    $ python mangage.py shell (pour lancer la commande interactive de django)
+    $ from Connection.models import Personnes, Formation, Professeur, Horaire, Matiere (pour importer les models)
+    $ isaac = Personne(nom: "isaac")
+    $ isaac.save()
+
+
