@@ -89,3 +89,10 @@ VALUES('tcheuyassi', 'Isaac', 'test', 'eleve', 'admin', 'test',  '2021/12/12'),
 
 select * from personnes;	
 
+INSERT INTO formations(nom, responsable, lieu)
+VALUES('Blindcode 4 data', 'Jonny', 'Louvin La Neuv'),
+
+
+
+select * from formations;	
+
