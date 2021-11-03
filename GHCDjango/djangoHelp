@@ -52,5 +52,7 @@ commandes supplémentaires installées :
     $ isaac = Personne(nom: "isaac")
     $ isaac.save()
 	$ philip = Personne.objects.create(nom="Dupont", prenom="Philip") 'créer un enregistrement en une ligne.)
+	$ ./manage.py shell < myscript.py (executer un fichier python dans la console django)
+	$ exec(open('myscript.py').read())
 
 

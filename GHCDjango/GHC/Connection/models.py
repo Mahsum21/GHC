@@ -12,7 +12,7 @@ class Personne(models.Model):
     prenom = models.CharField(max_length=255, null = False)
     fonction = models.CharField(max_length=255, null = False)
     statut = models.CharField(max_length=255, null = True)
-    email = models.EmailField(max_length=255, null = False)
+    email = models.EmailField(max_length=255, null = False, unique=True)
     mdp = models.CharField(max_length=255, null = False)
     photo = models.ImageField( null = True)
     # photo = models.URLField()
