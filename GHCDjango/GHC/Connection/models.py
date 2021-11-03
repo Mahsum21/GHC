@@ -8,12 +8,12 @@ from django.db.models.manager import ManagerDescriptor
 # Create your models here.
 
 class Personne(models.Model): 
-    nom = models.CharField(max_length=255, null = True)
-    prenom = models.CharField(max_length=255, null = True)
-    fonction = models.CharField(max_length=255, null = True)
+    nom = models.CharField(max_length=255, null = False)
+    prenom = models.CharField(max_length=255, null = False)
+    fonction = models.CharField(max_length=255, null = False)
     statut = models.CharField(max_length=255, null = True)
-    email = models.EmailField(max_length=255, null = True)
-    mdp = models.CharField(max_length=255, null = True)
+    email = models.EmailField(max_length=255, null = False)
+    mdp = models.CharField(max_length=255, null = False)
     photo = models.ImageField( null = True)
     # photo = models.URLField()
     dateEnregistrement = models.DateTimeField( auto_now_add=True)
