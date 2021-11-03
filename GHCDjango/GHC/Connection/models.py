@@ -31,9 +31,9 @@ class Professeur(Personne):
 
 class Matiere(models.Model):
     nom = models.CharField(max_length=255, null=False)
-    totalDuration = models.DurationField()
-    currentDuration = models.DurationField()
-    dailyDuration = models.DurationField()
+    dureeTotale = models.DurationField()
+    dureeEnCour = models.DurationField()
+    dureeQuotidienne = models.DurationField()
     professeur = models.ManyToManyField(Professeur, related_name='matieres')
 
 
