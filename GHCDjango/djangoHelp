@@ -51,5 +51,6 @@ commandes supplémentaires installées :
     $ from Connection.models import Personne, Formation, Professeur, Horaire, Matiere (pour importer les models)
     $ isaac = Personne(nom: "isaac")
     $ isaac.save()
+	$ philip = Personne.objects.create(nom="Dupont", prenom="Philip") 'créer un enregistrement en une ligne.)
 
 
