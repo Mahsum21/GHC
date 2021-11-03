@@ -48,7 +48,7 @@ commandes supplémentaires installées :
     $ python manage.py makemigrations (pour générer les migrations automatiquement)
     $ python manage.py migrate (pour executer les migrations) 
     $ python manage.py shell (pour lancer la commande interactive de django)
-    $ from Connection.models import Personnes, Formation, Professeur, Horaire, Matiere (pour importer les models)
+    $ from Connection.models import Personne, Formation, Professeur, Horaire, Matiere (pour importer les models)
     $ isaac = Personne(nom: "isaac")
     $ isaac.save()
 
