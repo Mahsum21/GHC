@@ -52,4 +52,6 @@ commandes supplémentaires installées :
     $ isaac = Personne(nom: "isaac")
     $ isaac.save()
 
+-------------------------------------------------------------------------
+    $ doskey /history (pour visualiser l'historique des commandes cmd) (ou la touche F7)
 
