@@ -12,7 +12,7 @@ class Personne(models.Model):
     prenom = models.CharField(max_length=255, null = False)
     fonction = models.CharField(max_length=255, null = False)
     statut = models.CharField(max_length=255, null = True)
-    email = models.EmailField(max_length=255, null = False)
+    email = models.EmailField(max_length=255, null = False, unique=True)
     mdp = models.CharField(max_length=255, null = False)
     photo = models.ImageField( null = True)
     # photo = models.URLField()
@@ -31,9 +31,9 @@ class Professeur(Personne):
 
 class Matiere(models.Model):
     nom = models.CharField(max_length=255, null=False)
-    totalDuration = models.DurationField()
-    currentDuration = models.DurationField()
-    dailyDuration = models.DurationField()
+    dureeTotale = models.DurationField()
+    dureeEnCour = models.DurationField()
+    dureeQuotidienne = models.DurationField()
     professeur = models.ManyToManyField(Professeur, related_name='matieres')
 
 

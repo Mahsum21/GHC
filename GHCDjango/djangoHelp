@@ -47,10 +47,13 @@ commandes supplémentaires installées :
     $ python -m pip install Pillow (à permis de prendre en compte les classes de models)
     $ python manage.py makemigrations (pour générer les migrations automatiquement)
     $ python manage.py migrate (pour executer les migrations) 
-    $ python mangage.py shell (pour lancer la commande interactive de django)
-    $ from Connection.models import Personnes, Formation, Professeur, Horaire, Matiere (pour importer les models)
+    $ python manage.py shell (pour lancer la commande interactive de django)
+    $ from Connection.models import Personne, Formation, Professeur, Horaire, Matiere (pour importer les models)
     $ isaac = Personne(nom: "isaac")
     $ isaac.save()
+	$ philip = Personne.objects.create(nom="Dupont", prenom="Philip") 'créer un enregistrement en une ligne.)
+	$ ./manage.py shell < myscript.py (executer un fichier python dans la console django)
+	$ exec(open('myscript.py').read())
 
 -------------------------------------------------------------------------
     $ doskey /history (pour visualiser l'historique des commandes cmd) (ou la touche F7)
