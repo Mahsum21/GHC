@@ -1,0 +1,140 @@
+{% load static %}
+
+{% include 'connection/head.html' %}
+
+
+<body>
+
+    <!-- header-start -->
+    
+{% include 'connection/header.html' %}
+
+    <!-- header-end -->
+    
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3 aria-hidden="true">
+                            {% block headTitle %} 
+                            {% endblock %}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <!-- service_area_start  -->
+    
+        {% block mainContent %} 
+        
+        {% endblock %}
+    
+    <!-- service_area_end  -->
+
+    <!-- footer start -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="{% static 'img/logo_eqla.png' %}" alt="logo" width="100px" role="logo" >
+                                </a>
+                            </div>
+                            <p>
+                                Eqla - <span lang="en" >Schools</span> <br>
+                                <span class='sr-only' >téléphone</span>
+                                02/241 65 68 
+                            </p>
+                            <div class="social_links">
+                                <ul class="mt-0 pt-0">
+                                    <li class="mt-0 pt-0">
+                                        <a href="{% static 'https://www.linkedin.com/company/eqlaasbl/' %}" target="_blank" title="Linkedin" >
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% static 'https://icons.getbootstrap.com/icons/facebook/' %}" target="_blank" title="facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% static 'https://www.instagram.com/accounts/login/' %}" target="_blank" title="twitter">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% static 'info@eqla.be' %}" target="_blank" title="infos">
+                                            <i class="fa fa-info"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.1s" data-wow-delay=".4s">
+                            <h3 class="footer_title">
+                                Matières en cours
+                            </h3>
+                            <ul>
+                                <li><a href="#">PYTHON (76H remain)</a></li>
+                                <li><a href="#">Recherche Emploi (3H remain)</a></li>
+                                <li><a href="#">MYSQL (10H remain)</a></li>
+                                <li><a href="#">SASS (6H remain) </a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="footer_widget wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".5s">
+                            <h3 class="footer_title">
+                                Profs
+                            </h3>
+                            <ul>
+                                <li><a href="#">PHILIPS</a></li>
+                                <li><a href="#">FOREM(les bonnes dames)</a></li>
+                                <li><a href="#"> Johnny</a></li>
+                                <li><a href="#">...</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br> Avec Eqla - <span lang="en" >Schools</span>  
+<span class="font-italic" >
+    Coder n'a jamais été aussi fun !!!
+</span>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- link that opens popup -->
+    <!-- JS here -->
+
+
+    {% include 'connection/afterfooter.html' %}
+
+

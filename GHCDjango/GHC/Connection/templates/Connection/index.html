@@ -1,0 +1,124 @@
+
+{% load static %}
+
+{% include 'connection/head.html' %}
+<body>
+
+    <!-- header-start -->
+
+    
+{% include 'connection/header.html' %}
+
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area m-0">
+        <div class="single_slider  d-flex align-items-center slider_bg_1 mb-0">
+            <div class="container mb-0">
+                <div class="row align-items-center justify-content-center mb-0">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="slider_text">
+                            <h3 class="wow fadeInRight text-warning" data-wow-duration="1s" data-wow-delay=".1s" role="note" >La programmation par tous et pour tous </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 mb-0">
+                        <div class="payment_form warning-bg wow fadeInDown" data-wow-duration="1.2s" data-wow-delay=".2s">
+                            <div class="form">
+                                <span class="border border-warning" style="max-height: 10px;" >
+                                    <div class="col-lg-8">
+                                        <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                          <div class="row">
+                                            <div class="col-sm-12">
+                                              <div class="form-group">
+                                                <label for="email">Adresse Email : </label>
+                                                <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer votre E-mail'" placeholder = 'Entrer votre E-mail'>
+                                              </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                              <div class="form-group">
+                                                <label for="mdp">Mot de passe : </label>
+                                                <input class="form-control" name="mdp" id="mdp" type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer votre mot de passe '" placeholder = 'Entrer votre mot de passe'>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <button type="submit" class="button button-contactForm btn_4 boxed-btn4">Valider</button>
+                                          </div>
+                                        </form>
+                                      </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+
+    <!-- footer start -->
+    <footer class="footer mt-0 pt-0" role="contentinfo">
+        <div class="footer_top mt-0 pt-0 "></div>
+            <div class="container mt-0 pt-0"> 
+                <div class="row mt-0 pt-0">
+                    <div class="col-xl-4 col-md-6 col-lg-3 mt-0 pt-0">
+                        <div class="container footer_widget wow fadeInUp mt-0 pt-0" data-wow-duration="1s" data-wow-delay=".3s">
+                            
+                            <div class="social_links mt-0">
+                                <ul class="mt-0 pt-0">
+                                    <li class="mt-0 pt-0">
+                                        <a href="https://www.linkedin.com/company/eqlaasbl/" target="_blank" title="Linkedin" >
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://icons.getbootstrap.com/icons/facebook/" target="_blank" title="facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/accounts/login/" target="_blank" title="twitter">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="info@eqla.be" target="_blank" title="infos">
+                                            <i class="fa fa-info"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            
+                            Avec Eqla - <span lang="en" >Schools</span>  <br>
+                            <span class="font-italic" >
+                                Coder n'a jamais été aussi fun!!!
+                            </span>  
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- link that opens popup -->
+    <!-- JS here -->
+
+
+    {% include 'connection/afterfooter.html' %}
+
+
+

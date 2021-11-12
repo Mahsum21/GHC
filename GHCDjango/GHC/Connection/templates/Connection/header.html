@@ -1,0 +1,52 @@
+{% load static %}
+
+    <header role="banner">
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid ">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="{% url 'ghc:index' %}">
+                                        <img src="{% static 'connection/img/site/logo_eqla.png' %}" width="100" alt="logo" role="logo">
+                                        <br>
+                                        <p>Eqla - <span lang="en" >Schools</span></p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav role="navigation" >
+                                        <ul id="navigation">
+                                            <li><a href="{% url 'ghc:index' %}">Accueil</a></li>
+                                            <li><a href="{% url 'ghc:index' %}">Connexion</a></li>
+                                            <li><a href="{% url 'ghc:horaires' %}"  >horaire</a></li>
+                                            <li><a href="{% url 'ghc:admin' %}" >Admin</a></li>
+                                            <li><a href="" >MySpace</a></li>
+                                            <li><a href="">Deconnexion</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="Appointment">
+                                    <div class="phone_num d-none d-xl-block">
+                                        <a href="{% static 'connection/#' %}"> <i class="fa fa-phone"></i> 02/241 65 68</a>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <span class='sr-only' >téléphone</span>
+                                        <a class="boxed-btn4" href="{% static 'connection/#' %}">mon Profil</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>

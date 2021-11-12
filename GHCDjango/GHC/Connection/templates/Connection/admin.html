@@ -1,0 +1,113 @@
+
+{% extends 'connection/base.html' %}
+
+
+{% block headTitle %} 
+administrer
+{% endblock %}
+
+
+
+{% block mainContent %} 
+
+
+    <!-- service_area_start  -->
+    <div class="service_area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-90">
+                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s"></span>
+                        <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">HORAIRES DE COURS BLINDCODE4DATA</h1>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Ensemble, plongeons dans la gueule du PYTHON</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <aside class="col-lg-2 col-md-2 border-right">
+                    <div class="single_service wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".5s">
+                
+                        <div class="d-none d-lg-block">
+                            <a class="boxed-btn my-1" href="#" role="button">Classe</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Personnel</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Cadre</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Professeur</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Etudiant</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Matiere</a><br>
+                            <a class="boxed-btn my-1" href="#" role="button">Horaire</a><br>
+                        </div>
+                    </div>
+                </aside>
+
+                <main class="col border " role="main" >
+                    <div class="single_service wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="row">
+                            <h2 class="text-center boxed-btn col " >Etudiant</h2>
+                            <div class="d-none d-lg-block col">
+                                <a class="boxed-btn4 my-1 mt-2 " href="#" role="button">Créer</a>
+                                <a class="boxed-btn4 my-1 mt-2 " href="#" role="button">Modifier</a>
+                                <a class="boxed-btn4 my-1 mt-2 " href="#" role="button">supprimer</a>
+                            </div>
+                    </div>
+                        <hr>
+                        <h3 class="text-center boxed-btn col">Ajout</h3>
+
+                        <div class="form border border-warning" style="max-height: 10px;">
+                                <div class="col-lg-8">
+                                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                      <div class="row">
+                                        <div class="col-sm-12 align-content-center">
+                                          <div class="form-group d-flex ">
+                                            <label for="firstName">Prenom &nbsp;</label>
+                                            <input class="form-control" name="firstName" id="firstName" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'votre Prénom'" placeholder ="votre Prenom" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                          <div class="form-group d-flex">
+                                            <label for="name">Nom &nbsp; </label>
+                                            <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = ' votre nom '" placeholder ="votre Nom" required >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group mt-3">
+                                        <button type="submit" class="button button-contactForm btn_4 boxed-btn4">Valider</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                        </div>
+                        
+                    </div>
+                </main>
+
+                <aside class="col-lg-3 col-md-3 border">
+                    <div class="single_service wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".5s">
+                        <h2>Liste des Etudiants</h2>
+
+                        <ul class='list-unstyled' >
+                            <li class='text-center row my-1'>
+                                <a class='boxed-btn4 col mx-2' href="#" role="listitem" >Mashum </a>
+                                <a class='boxed-btn4 col-3 mr-2' href="#"><span class='sr-only' role="button">supprimer</span>
+                                    <i class='fa fa-archive-fill'></i>
+                                </a>
+                            </li>
+                            <li class='text-center row my-1'>
+                                <a class='boxed-btn4 col mx-2' href="#" role="listitem" >Isaac </a>
+                                <a class='boxed-btn4 col-3 mr-2' href=''><span class='sr-only' role="button" >supprimer</span>
+                                    <i class='fa fa-archive-fill'></i>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end  -->
+
+
+{% endblock %}
+
+
