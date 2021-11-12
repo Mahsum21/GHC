@@ -4,7 +4,7 @@ B-  lancer le server django
     $ python manage.py runserver
     $ ./manage.py runserver
 
---------------------------------------------------------
+-------------------------------------------------------------------------------------------
 1-  créer un repertoire de travail : 
     $ mkdir djangoWS
 2-  ouvrir le repertoire de travail 
@@ -57,4 +57,57 @@ commandes supplémentaires installées :
 
 -------------------------------------------------------------------------
     $ doskey /history (pour visualiser l'historique des commandes cmd) (ou la touche F7)
+
+    -------------------------------------------------------------------------------------
+            (Les commandes dans le shell de django)
+
+1-  pour ajouter un élément : (instancier et modifier les attribut)
+    $ isaac = Personne(nom= "isaac", prenom = "mahsum")
+2-  pour modifier : 
+    $ isaac.prenom = "zack"
+3-  pour enregister : 
+    $ isaac.save()
+4-  pour supprimer : 
+    $ isaac.delete()
+5-  pour creer en une ligne un objet(sans le save): 
+    $ isaac.objects.create(nom = "tcheuyassi")
+6-  pour retrouver un enregistrement dans la base de donnéé: 
+    $ mahsum = Personne.objets.get(nom = "mahsum")
+6-  pour creer une classe dans laquelle mahsum étudie: 
+    $ 4data = Formation.object.create(nom = "4Data" )
+    $ 4data.personnes.add()
+
+    $ series = Serie.objects.filter(available = True).order_by('-createdAt')[:12]
+    $ series = Serie.objects.filter(available = True).order_by('title')
+    $ serie = Serie.objects.get(pk = id)
+    $ series = Serie.objects.filter(title__icontains = query)
+    $ if not series.exists()
+    $ series = Serie.objects.filter(artists__name__icontains=query)
+
+
+-----------------------------  Gabary   ---------------------------------------
+
+{% block content %} {% endblock %} (dans le fichier parent)
+
+{% extends 'connection/base.html' %}    (dans le fichier enfant )
+
+{% block content %} (dans le fichier enfant)
+    veuillez ajouter ici tout le contenu de remplacement; merci
+
+    {% include 'connection/list.html' %} (permet d'inclure un gabari entier ici )
+{% endblock %}
+
+context = {}  (à passer en premier paramètre dans la méthode render pour un gabari)
+
+{% for element in list  %}
+<li> {{ element.titre }} </li>
+{% endfor %}
+
+{% if forloop.counter|divisibleby:3 %} <div class="clearfix" ></div> {% endfor %}
+
+
+  <!-- emenengue dina = 6 -->
+
+
+
 
