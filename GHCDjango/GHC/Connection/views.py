@@ -5,20 +5,37 @@ from django.http import HttpResponse
 from django.template import loader
 # Create your views here.
 
+table = ""
 
 def Index(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/index.html')
-	return HttpResponse(template.render(request=request))
+    context = {
+    }
+    return render(request,'connection/index.html',context)
 
 
 def Horaires(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/horaires.html')
-	return HttpResponse(template.render(request=request))
-
+    context = {
+    }
+    return render(request,'connection/horaires.html',context)
 
 def Admin(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/admin.html')
-	return HttpResponse(template.render(request=request))
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/admin.html', context)
+
+def Personne(request):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/classe/index.html', context)
+
+def Operations(request, table, operation):
+    context = {
+        'operation' : operation,
+        'table' : table, 
+    }
+    return render(request,'connection/classe/index.html',context)
+
