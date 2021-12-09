@@ -5,27 +5,27 @@
         <hr>
         <div class="form mb-3">
             <div class="col-lg-8">
-                <form method="post" class="form" action="">
-                        
+                <form method="post" class="form" action="{% url 'ghc:etudiantadd' %}">
+                        {% csrf_token %}                        
                           <div class="form-group" >
                                   <label for="nom" class="text-white font-weight-bold" >nom</label>
                                   <input type="text" id="nom"  name="nom" class="form-control" aria-placeholder="nom" value="" required  >
                           </div>
                           <div class="form-group" >
-                                  <label for="prenom" class="text-white font-weight-bold" >adresse IP</label>
-                                  <input type="text" id="prenom"  name="prenom" class="form-control" aria-placeholder="prenom IP" value="" required  >
+                                  <label for="prenom" class="text-white font-weight-bold" >Prenom</label>
+                                  <input type="text" id="prenom"  name="prenom" class="form-control" aria-placeholder="prenom" value=""  >
                           </div>
                           <div class="form-group" >
-                                  <label for="age" class="text-white font-weight-bold" >age :</label>
-                                  <input type="text" id="version_redhat"  name="age" class="form-control" aria-placeholder="vs redhat" value="" required  >
+                                  <label for="email" class="text-white font-weight-bold" >email :</label>
+                                  <input type="email" id="version_redhat"  name="email" class="form-control" aria-placeholder="email" value="" required  >
                           </div>
                           <div class="form-group" >
                                   <label for="classe" class="text-white font-weight-bold" >classe</label>
-                                  <input type="text" id="classe"  name="version_apache" class="form-control" aria-placeholder="vs apache" value="" required  >
+                                  <input type="text" id="classe"  name="classe" class="form-control" aria-placeholder="classe" value=""  >
                           </div>
                           <div class="form-group" >
-                                  <label for="adresse" class="text-white font-weight-bold" >adresse</label>
-                                  <input type="text" id="adresse"  name="adresse" class="form-control" aria-placeholder="adresse" disabled="disabled" value="" required  >
+                                  <label for="mdp" class="text-white font-weight-bold" >mot de passe</label>
+                                  <input type="password" id="mdp"  name="mdp" class="form-control" aria-placeholder="mot de passe"  value="" required >
                           </div>
 
 
