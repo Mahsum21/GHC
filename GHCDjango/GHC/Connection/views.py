@@ -5,20 +5,189 @@ from django.http import HttpResponse
 from django.template import loader
 # Create your views here.
 
+table = ""
 
 def Index(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/index.html')
-	return HttpResponse(template.render(request=request))
+    context = {
+    }
+    return render(request,'connection/index.html',context)
 
 
 def Horaires(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/horaires.html')
-	return HttpResponse(template.render(request=request))
-
+    context = {
+    }
+    return render(request,'connection/horaires.html',context)
 
 def Admin(request):
-	# message = "<h1 style='text-align:center'> Bienvenue chez Mahsis</h1>"
-	template = loader.get_template('connection/admin.html')
-	return HttpResponse(template.render(request=request))
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/admin.html', context)
+
+def Etudiant(request):
+    context = {
+        'option' : 0 ,
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def EtudiantCreate(request):
+    context = {
+        'option' : 0 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def EtudiantAdd(request):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def EtudiantEdit(request, etudiantId):
+    context = {
+        'option' : 1 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def EtudiantDelete(request, etudiantId):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def Professeur(request):
+    context = {
+        'option' : 0 ,
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/professeur/index.html', context)
+
+def ProfesseurCreate(request):
+    context = {
+        'option' : 0 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/professeur/index.html', context)
+
+def ProfesseurAdd(request):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/professeur/index.html', context)
+
+def ProfesseurEdit(request, professeurId):
+    context = {
+        'option' : 1 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/professeur/index.html', context)
+
+def ProfesseurDelete(request, professeurId):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def Matiere(request):
+    context = {
+        'option' : 0 ,
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/matiere/index.html', context)
+
+def MatiereCreate(request):
+    context = {
+        'option' : 0 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/matiere/index.html', context)
+
+def MatiereAdd(request):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/matiere/index.html', context)
+
+def MatiereEdit(request, matiereId):
+    context = {
+        'option' : 1 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/matiere/index.html', context)
+
+def MatiereDelete(request, matiereId):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/matiere/index.html', context)
+
+def Horaire(request):
+    context = {
+        'option' : 0 ,
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/horaire/index.html', context)
+
+def HoraireCreate(request):
+    context = {
+        'option' : 0 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/horaire/index.html', context)
+
+def HoraireAdd(request):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/horaire/index.html', context)
+
+def HoraireEdit(request, horaireId):
+    context = {
+        'option' : 1 , 
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/horaire/index.html', context)
+
+def HoraireDelete(request, horaireId):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/horaire/index.html', context)
+
+def Delete(request, matiereId):
+    context = {
+        'operation' : "",
+        'table' : "", 
+    }
+    return render(request,'connection/etudiant/index.html', context)
+
+def Operations(request, table, operation):
+    context = {
+        'operation' : operation,
+        'table' : table, 
+    }
+    return render(request,'connection/etudiant/index.html',context)
+

@@ -23,10 +23,14 @@ administrer
             <div class="row">
                 
                 {% include 'connection/itemsOptions.html' %}
-
-                {% include 'connection/adminCenter.html' %}
                 
-                {% include 'connection/adminRight.html' %}
+                {% if option == 0 %}
+                    {% include 'connection/etudiant/create.html' %}
+                {% elif option == 1 %}
+                    {% include 'connection/etudiant/modify.html' %}
+                {% endif %}
+
+                {% include 'connection/etudiant/list.html' %}
 
             </div>
         </div>
