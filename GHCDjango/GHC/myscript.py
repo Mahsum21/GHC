@@ -1,13 +1,13 @@
 from Connection.models import Personne, Formation, Professeur, Horaire, Matiere 
 
-createPersonne = [ ["Sana", "Eleonore", "sana.elochat@gmail.com"], ["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], ["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], ["Dupont", "Philip", "p.dupont@eqlas.be"], ["Piette", "Jonny", "j.piette@eqlas.be"] ]
+createPersonne = [ ["Sana", "Eleonore", "sana.elochat@gmail.com"], ["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], ["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], ["Dupont", "Philip", "p.dupont@eqlas.be"], ["Piette", "Jonny", "j.piette@eqlas.be"], ["dufrane", "allain", "d.alain@gmail.com"] ]
 
-for c in createPersonne: 
-    for j in c : 
-        try:
-            createPersonne = Personne.objects.get(name = j)
-        except:
-            Personne.objects.create(name = j)	
+for c in range(len(createPersonne)): 
+	# for j in c : 
+	try:
+		Personne.objects.get(email = createPersonne[c][2])
+	except:
+		Personne.objects.create(nom = createPersonne[c][0], prenom = createPersonne[c][1], email = createPersonne[c][2])	
 
 # for s in series: 
 #     try :
