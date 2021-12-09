@@ -1,0 +1,22 @@
+
+
+
+<aside class="col-lg-3 col-md-3 border">
+
+<div class="single_service wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".5s">
+    <h2 class="text-center text-white font-weight-bold">Liste des horaires disponibles  <a class="btn my-1 mt-2 btn-success " href="{% url 'ghc:horairecreate' %}" role="button">Ajouter</a></h2>
+
+    <ul class='list-unstyled pb-3' >
+        <li class='text-center row m-1'>
+            <a class='btn col mx-2 btn-warning' href="{% url 'ghc:horaireedit' 3 %}" role="listitem" >mahsum </a>
+            <a class='btn col-3 mr-2 btn-danger' href="{% url 'ghc:horairedelete' 1 %}"><span class='sr-only' role="button">supprimer</span>
+                <i class="fa fa-trash"></i>
+            </a>
+        </li>
+
+    </ul>
+    
+</div>
+
+</aside>
+
