@@ -7,13 +7,18 @@
     <h2 class="text-center text-white font-weight-bold">Liste des etudiants  <a class="btn my-1 mt-2 btn-success " href="{% url 'ghc:etudiantcreate' %}" role="button">Ajouter</a></h2>
 
     <ul class='list-unstyled pb-3' >
+        {% for data in datas %}
         <li class='text-center row m-1'>
-            <a class='btn col mx-2 btn-warning' href="{% url 'ghc:etudiantedit' 3 %}" role="listitem" >mahsum </a>
-            <a class='btn col-3 mr-2 btn-danger' href="{% url 'ghc:etudiantdelete' 1 %}"><span class='sr-only' role="button">supprimer</span>
-                <i class="fa fa-trash"></i>
-            </a>
-        </li>
+            <a class='btn col mx-2 btn-warning' href="{% url 'ghc:etudiantedit' data.id %}" role="listitem" ><span class='sr-only' role="button">modifier</span> {{ data.nom }} </a>
+            <form method="post" class="form-inline" action="{% url 'ghc:etudiantdelete' data.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" ><span class='sr-only' role="button">supprimer</span>
+                <i class="fa fa-trash"></i></button>
 
+            </a>
+            </form>
+        </li>
+{% endfor %}´´
     </ul>
     
 </div>

@@ -3,15 +3,18 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from django.shortcuts import redirect
 # Create your views here.
 
+from Connection.models import Personne, Formation, Professeur, Horaire, Matiere
+
 table = ""
+
 
 def Index(request):
     context = {
     }
     return render(request,'connection/index.html',context)
-
 
 def Horaires(request):
     context = {
@@ -26,42 +29,59 @@ def Admin(request):
     return render(request,'connection/admin.html', context)
 
 def Etudiant(request):
+    etudiants = Personne.objects.all()
     context = {
-        'option' : 0 ,
-        'operation' : "",
-        'table' : "", 
+        'option' : 0 , 
+        'datas' : etudiants,
+        'item' : "", 
     }
     return render(request,'connection/etudiant/index.html', context)
 
 def EtudiantCreate(request):
+    etudiants = Personne.objects.all()
     context = {
         'option' : 0 , 
-        'operation' : "",
-        'table' : "", 
+        'datas' : etudiants,
+        'item' : "", 
     }
     return render(request,'connection/etudiant/index.html', context)
 
 def EtudiantAdd(request):
-    context = {
-        'operation' : "",
-        'table' : "", 
-    }
-    return render(request,'connection/etudiant/index.html', context)
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        personne = Personne.objects.filter(email = email)
+        if not personne.exists():
+            etudiant = Personne.objects.create(
+                nom = request.POST.get('nom'), 
+                prenom = request.POST.get('prenom'), 
+                email = email, 
+                mdp = request.POST.get('mdp')
+            )
+    return redirect('/admin/etudiant/')
 
 def EtudiantEdit(request, etudiantId):
+    datas = Personne.objects.all()
+    item = Personne.objects.get(pk = etudiantId)
     context = {
         'option' : 1 , 
-        'operation' : "",
-        'table' : "", 
+        'datas' : datas,
+        'item' : item, 
     }
     return render(request,'connection/etudiant/index.html', context)
 
+def EtudiantUpdate(request, etudiantId):
+    personne = Personne.objects.get(pk = etudiantId)
+    if request.method == 'POST':
+        personne.nom = request.POST.get('nom')
+        personne.prenom = request.POST.get('prenom')
+        personne.email = request.POST.get('email')
+        personne.mdp = request.POST.get('mdp')
+        personne.save()
+    return redirect('/admin/etudiant/')
+
 def EtudiantDelete(request, etudiantId):
-    context = {
-        'operation' : "",
-        'table' : "", 
-    }
-    return render(request,'connection/etudiant/index.html', context)
+    Personne.objects.get(pk = etudiantId).delete()
+    return redirect('/admin/etudiant/')
 
 def Professeur(request):
     context = {

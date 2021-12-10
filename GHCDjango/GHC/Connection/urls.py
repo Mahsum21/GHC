@@ -13,7 +13,7 @@ urlpatterns = [
     path( 'admin/etudiant/create', views.EtudiantCreate, name="etudiantcreate" ), 
     path( 'admin/etudiant/add', views.EtudiantAdd, name="etudiantadd" ), 
     path( 'admin/etudiant/edit/<int:etudiantId>', views.EtudiantEdit, name="etudiantedit" ), 
-    # path( 'admin/etudiant/update/<int:etudiantId>', views.Etudiant, name="etudiantupdate" ), 
+    path( 'admin/etudiant/update/<int:etudiantId>', views.EtudiantUpdate, name="etudiantupdate" ), 
 
     path( 'admin/professeur/', views.Professeur, name="professeur" ), 
     path( 'admin/professeur/delete/<int:professeurId>', views.ProfesseurDelete, name="professeurdelete" ), 
