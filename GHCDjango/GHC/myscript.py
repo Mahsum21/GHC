@@ -1,3 +1,5 @@
+from datetime import datetime
+import time
 from Connection.models import Personne, Formation, Professeur, Horaire, Matiere 
 
 createPersonne = [ ["Sana", "Eleonore", "sana.elochat@gmail.com"], ["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], ["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], ["Bakashika", "Jessie", "j.bakashika@gmail.com"], ["Borsen", "Maxime", "m.borsen@gmail.com"], ["dufrane", "allain", "d.alain@gmail.com"] ]
@@ -34,8 +36,11 @@ for c in range(len(createProfesseur)):
 # 	except:
 # 		Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere  = 2, formations = 1)	
 
-createMatiere= [ ["mysql", '00:50:00', '00:10:00', '00:03:00', Professeur.objects.get(nom = "Piette")],  ["python", '00:250:00', '00:100:00', '00:03:00', Professeur.objects.get(nom = "Dupont")], ["django", '00:40:00', '00:20:00', '00:03:00', Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", '00:15:00', '00:05:00', '00:03:00', Professeur.objects.get(nom = "Goraj")] ]
-# createMatiere= [ ["mysql", DateTime('00:50:00'), DateTime('00:10:00'), DateTime('00:03:00'), Professeur.objects.get(nom = "Piette")],  ["python", DateTime('00:250:00'), DateTime('00:100:00'), DateTime('00:03:00'), Professeur.objects.get(nom = "Dupont")], ["django", DateTime('00:40:00'), DateTime('00:20:00'), DateTime('00:03:00'), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", DateTime('00:15:00'), DateTime('00:05:00'), DateTime('00:03:00'), Professeur.objects.get(nom = "Goraj")] ]
+createMatiere= [ ["mysql", datetime(/second=180000), datetime(/second=36000), datetime(/second=10800), Professeur.objects.get(nom = "Piette")],  ["python", datetime(/second=900000), datetime(/second=360000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["django", datetime(/second=144000), datetime(/second=72000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(/second=54000), datetime(/second=18000), datetime(/second=10800), Professeur.objects.get(nom = "Goraj")] ]
+# createMatiere= [ ["mysql", 180000, 36000, 10800, Professeur.objects.get(nom = "Piette")],  ["python", 900000, 360000, 10800, Professeur.objects.get(nom = "Dupont")], ["django", 144000, 72000, 10800, Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", 54000, 18000, 10800, Professeur.objects.get(nom = "Goraj")] ]
+# createMatiere= [ ["mysql", datetime(50:00), datetime("10:00"), datetime(03:00), Professeur.objects.get(nom = "Piette")],  ["python", datetime(250), datetime(100), datetime(03), Professeur.objects.get(nom = "Dupont")], ["django", datetime(40), datetime(20), datetime(03), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(15), datetime(05), datetime(03), Professeur.objects.get(nom = "Goraj")] ]
+# timestamp = time.mktime(time.strptime('22:24:46', '%Y-%m-%d %H:%M:%S'))
+
 
 for c in range(len(createMatiere)): 
 	try:
