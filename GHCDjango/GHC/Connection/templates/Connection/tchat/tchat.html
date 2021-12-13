@@ -5,9 +5,13 @@
 
 
 {% block mainContent %} 
-{% if() %} 
+{% if expediteur %} 
 
 {% include 'connection/tchat/list.html' %}
-{% include 'connection/tchat/tchatContent.html' %}
 
+{% if destinataire %} 
+{% include 'connection/tchat/tchatContent.html' %}
+{% endif %}
+
+{% endif %}
 {% endblock %}

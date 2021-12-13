@@ -46,8 +46,10 @@ def Tchat(request, id1=0, id2=0):
             expediteur = id1, 
             destinataire = id2
         )
-    expediteur= Personne.objects.filter(pk = id1)
-    destinataire= Personne.objects.filter(pk = id2)
+    if id1 >0:
+        expediteur= Personne.objects.filter(pk = id1)
+    if id2 >0:
+        destinataire= Personne.objects.filter(pk = id2)
     datas = Personne.objects.all()
     messages = Message.objects.all()
     context = {
