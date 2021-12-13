@@ -45,3 +45,11 @@ class Horaire(models.Model):
     remarque = models.CharField(max_length=255) 
     matiere = models.ForeignKey(Matiere, on_delete=models.CASCADE)
     formations = models.ManyToManyField(Formation, related_name='horaires', blank=True)
+
+
+class Message(models.Model): 
+    message = models.TextField(null=True)
+    date = models.DateTimeField( auto_now_add=True)
+    expediteur = models.IntegerField()
+    destinataire = models.IntegerField()
+

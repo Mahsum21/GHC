@@ -13,44 +13,12 @@
 
     <!-- slider_area_start -->
     <div class="slider_area m-0">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 mb-0">
-            <div class="container mb-0">
-                <div class="row align-items-center justify-content-center mb-0">
-                    <div class="col-lg-7 col-md-6">
-                        <div class="slider_text">
-                            <h3 class="wow fadeInRight text-warning" data-wow-duration="1s" data-wow-delay=".1s" role="note" >La programmation par tous et pour tous </h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 mb-0">
-                        <div class="payment_form warning-bg wow fadeInDown" data-wow-duration="1.2s" data-wow-delay=".2s">
-                            <div class="form">
-                                <span class="border border-warning" style="max-height: 10px;" >
-                                    <div class="col-lg-8">
-                                        <form class="form"  method="post"   action="{% url 'ghc:tchatconnect' %}">
-                                            {% csrf_token %}
-                                            <div class="row">
-                                            <div class="col-sm-12">
-                                              <div class="form-group">
-                                                <label for="email">Adresse Email: </label>
-                                                <input class="form-control" name="email" id="email" type="email"   placeholder = 'Entrer votre E-mail'>
-                                              </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                              <div class="form-group">
-                                                <label for="mdp">Mot de passe : </label>
-                                                <input class="form-control" name="mdp" id="mdp" type="password"   placeholder = 'Entrer votre mot de passe'>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="form-group mt-3">
-                                            <button type="submit" class="button button-contactForm btn_4 boxed-btn4">Valider</button>
-                                          </div>
-                                        </form>
-                                      </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+        <div class="single_slider  d-flex align-items-center slider_bg_1 my-0">
+            <div class="container my-0">
+                <div class="row  my-0">           
+                    {% block mainContent %} 
+        
+                    {% endblock %}
                 </div>
             </div>
         </div>

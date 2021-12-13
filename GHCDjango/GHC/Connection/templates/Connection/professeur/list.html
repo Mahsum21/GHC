@@ -1,18 +1,24 @@
 
 
+
 <aside class="col-lg-3 col-md-3 border">
 
 <div class="single_service wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".5s">
-    <h2 class="text-center text-white font-weight-bold">Liste des professeur  <a class="btn my-1 mt-2 btn-success " href="{% url 'ghc:professeurcreate' %}" role="button">Ajouter</a></h2>
+    <h2 class="text-center text-white font-weight-bold">Liste des professeurs  <a class="btn my-1 mt-2 btn-success " href="{% url 'ghc:professeurcreate' %}" role="button">Ajouter</a></h2>
 
     <ul class='list-unstyled pb-3' >
+        {% for data in datas %}
         <li class='text-center row m-1'>
-            <a class='btn col mx-2 btn-warning' href="{% url 'ghc:professeuredit' 3 %}" role="listitem" >mahsum </a>
-            <a class='btn col-3 mr-2 btn-danger' href="{% url 'ghc:professeurdelete' 1 %}"><span class='sr-only' role="button">supprimer</span>
-                <i class="fa fa-trash"></i>
-            </a>
-        </li>
+            <a class='btn col mx-2 btn-warning' href="{% url 'ghc:professeuredit' data.id %}" role="listitem" ><span class='sr-only' role="button">modifier</span> {{ data.nom }} </a>
+            <form method="post" class="form-inline" action="{% url 'ghc:professeurdelete' data.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" ><span class='sr-only' role="button">supprimer</span>
+                <i class="fa fa-trash"></i></button>
 
+            </a>
+            </form>
+        </li>
+{% endfor %}´´
     </ul>
     
 </div>

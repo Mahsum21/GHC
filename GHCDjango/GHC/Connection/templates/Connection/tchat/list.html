@@ -1,0 +1,22 @@
+
+
+
+<aside class="col-lg-3 col-md-3 border">
+
+<div class="single_service wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".5s">
+    <h2 class="text-center text-white font-weight-bold">Vos correspondants  </h2>
+
+    <ul class='list-unstyled pb-3' >
+        {% for data in datas %}
+        {% if expediteur != data %}
+
+        <li class='text-center row my-1 mx-1'>
+            <a class='btn col btn-primary' href="{% url 'ghc:tchat' id1=expediteur.id id2=data.id %}" role="listitem" ><span class='sr-only' role="button">écrire à </span> {{ data.nom }} </a>
+        </li>
+
+{% endif %}
+{% endfor %}
+    </ul>
+</div>
+</aside>
+

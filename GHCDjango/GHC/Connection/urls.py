@@ -5,7 +5,9 @@ app_name="ghc"
 
 urlpatterns = [
     path('', views.Index, name="index"),
-    path( 'horaires/', views.Horaires, name="horaires" ), 
+    path( 'horaires/', views.Horaires, name="horaires" ),  
+    path( 'tchatConnect/', views.TchatConnect, name="tchatconnect" ),  
+    path( 'tchat/<int:id1>/<int:id2>', views.Tchat, name="tchat" ),  
     path( 'admin/', views.Admin, name="admin" ), 
 
     path( 'admin/etudiant/', views.Etudiant, name="etudiant" ), 
@@ -20,13 +22,13 @@ urlpatterns = [
     path( 'admin/professeur/create', views.ProfesseurCreate, name="professeurcreate" ), 
     path( 'admin/professeur/add', views.ProfesseurAdd, name="professeuradd" ), 
     path( 'admin/professeur/edit/<int:professeurId>', views.ProfesseurEdit, name="professeuredit" ), 
-    # path( 'admin/professeur/update/<int:professeurId>', views.Professeur, name="professeurupdate" ), 
+    path( 'admin/professeur/update/<int:professeurId>', views.ProfesseurUpdate, name="professeurupdate" ), 
 
-    path( 'admin/matiere/', views.Matiere, name="matiere" ),
-    path( 'admin/matiere/delete/<int:matiereId>', views.MatiereDelete, name="matieredelete" ),
-    path( 'admin/matiere/create', views.MatiereCreate, name="matierecreate" ),
-    path( 'admin/matiere/add', views.MatiereAdd, name="matiereadd" ),
-    path( 'admin/matiere/edit/<int:matiereId>', views.MatiereEdit, name="matiereedit" ), 
+    # path( 'admin/matiere/', views.Matiere, name="matiere" ),
+    # path( 'admin/matiere/delete/<int:matiereId>', views.MatiereDelete, name="matieredelete" ),
+    # path( 'admin/matiere/create', views.MatiereCreate, name="matierecreate" ),
+    # path( 'admin/matiere/add', views.MatiereAdd, name="matiereadd" ),
+    # path( 'admin/matiere/edit/<int:matiereId>', views.MatiereEdit, name="matiereedit" ), 
     # path( 'admin/matiere/update/<int:matiereId>', views.MatiereUpdate, name="matiereupdate" ), 
 
     path( 'admin/horaire/', views.Horaire, name="horaire" ),
