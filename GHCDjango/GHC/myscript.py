@@ -1,3 +1,5 @@
+from datetime import datetime
+import time
 from Connection.models import Personne, Formation, Professeur, Horaire, Matiere 
 
 createPersonne = [ ["Sana", "Eleonore", "sana.elochat@gmail.com"], ["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], ["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], ["Bakashika", "Jessie", "j.bakashika@gmail.com"], ["Borsen", "Maxime", "m.borsen@gmail.com"], ["dufrane", "allain", "d.alain@gmail.com"] ]
@@ -26,7 +28,7 @@ for c in range(len(createProfesseur)):
 	except:
 		Professeur.objects.create(nom = createProfesseur[c][0], prenom = createProfesseur[c][1], email = createProfesseur[c][2])	
 
-# createHoraire = [ ['22/12/2021', '00:09:00', "mysql", "Blindcode 4data"], ['22/12/2021', '00:12:45', "python", "Blindcode 4data"], ['23/12/2021', '00:09:00', "recherche d'emploi", "Blindcode 4data"], ['23/12/2021', '00:12:45', "django", "Blindcode 4data"], ['24/12/2021', '00:09:00', "python", "Blindcode 4data"] ]
+# createHoraire = [ [Datetime('2021-12-22'), DateTime('00:09:00'), "mysql", "Blindcode 4data"], ['22/12/2021', '00:12:45', "python", "Blindcode 4data"], ['23/12/2021', '00:09:00', "recherche d'emploi", "Blindcode 4data"], ['23/12/2021', '00:12:45', "django", "Blindcode 4data"], ['24/12/2021', '00:09:00', "python", "Blindcode 4data"] ]
 
 # for c in range(len(createHoraire)): 
 # 	try:
@@ -34,7 +36,11 @@ for c in range(len(createProfesseur)):
 # 	except:
 # 		Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere  = 2, formations = 1)	
 
-createMatiere= [ ["mysql", '00:50:00', '00:10:00', '00:3:00', Professeur.objects.get(nom = "Piette")],  ["python", '00:250:00', '00:100:00', '00:3:00', Professeur.objects.get(nom = "Dupont")], ["django", '00:40:00', '00:20:00', '00:3:00', Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", '00:15:00', '00:05:00', '00:3:00', Professeur.objects.get(nom = "Goraj")] ]
+createMatiere= [ ["mysql", datetime(/second=180000), datetime(/second=36000), datetime(/second=10800), Professeur.objects.get(nom = "Piette")],  ["python", datetime(/second=900000), datetime(/second=360000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["django", datetime(/second=144000), datetime(/second=72000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(/second=54000), datetime(/second=18000), datetime(/second=10800), Professeur.objects.get(nom = "Goraj")] ]
+# createMatiere= [ ["mysql", 180000, 36000, 10800, Professeur.objects.get(nom = "Piette")],  ["python", 900000, 360000, 10800, Professeur.objects.get(nom = "Dupont")], ["django", 144000, 72000, 10800, Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", 54000, 18000, 10800, Professeur.objects.get(nom = "Goraj")] ]
+# createMatiere= [ ["mysql", datetime(50:00), datetime("10:00"), datetime(03:00), Professeur.objects.get(nom = "Piette")],  ["python", datetime(250), datetime(100), datetime(03), Professeur.objects.get(nom = "Dupont")], ["django", datetime(40), datetime(20), datetime(03), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(15), datetime(05), datetime(03), Professeur.objects.get(nom = "Goraj")] ]
+# timestamp = time.mktime(time.strptime('22:24:46', '%Y-%m-%d %H:%M:%S'))
+
 
 for c in range(len(createMatiere)): 
 	try:
