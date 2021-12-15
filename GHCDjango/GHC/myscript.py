@@ -1,8 +1,14 @@
-from datetime import datetime
+import datetime
 import time
 from Connection.models import Personne, Formation, Professeur, Horaire, Matiere 
 
-createPersonne = [ ["Sana", "Eleonore", "sana.elochat@gmail.com"], ["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], ["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], ["Bakashika", "Jessie", "j.bakashika@gmail.com"], ["Borsen", "Maxime", "m.borsen@gmail.com"], ["dufrane", "allain", "d.alain@gmail.com"] ]
+createPersonne = [ 
+	["Sana", "Eleonore", "etudiant", "e.sana@gmail.com"], 
+	["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], 
+	["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], 
+	["Bakashika", "Jessie", "j.bakashika@gmail.com"], 
+	["Borsen", "Maxime", "m.borsen@gmail.com"], 
+	["dufrane", "allain", "d.alain@gmail.com"] ]
 
 for c in range(len(createPersonne)): 
 	# for j in c : 
@@ -11,7 +17,9 @@ for c in range(len(createPersonne)):
 	except:
 		Personne.objects.create(nom = createPersonne[c][0], prenom = createPersonne[c][1], email = createPersonne[c][2])	
 
-createFormation = [ ["Blindcode 4data", "LLN"], ["Blindcode", "Bruxel"] ]
+createFormation = [ 
+	["Blindcode 4data", "LLN"], 
+	["Blindcode", "Bruxel"] ]
 
 for c in range(len(createFormation)): 
 	# for j in c : 
@@ -20,7 +28,10 @@ for c in range(len(createFormation)):
 	except:
 		Formation.objects.create(nom = createFormation[c][0], lieu = createFormation[c][1], responsable_id = 1)	
 
-createProfesseur = [ ["Dupont", "Philip", "d.philip@eqlas.be"], ["Piette", "Jonny", "p.jonny@eqlas.be"], ["Goraj", "Sylviane", "s.goraj@forem.be"] ]
+createProfesseur = [ 
+	["Dupont", "Philip", "d.philip@eqlas.be"], 
+	["Piette", "Jonny", "p.jonny@eqlas.be"], 
+	["Goraj", "Sylviane", "s.goraj@forem.be"] ]
 
 for c in range(len(createProfesseur)): 
 	try:
@@ -28,26 +39,39 @@ for c in range(len(createProfesseur)):
 	except:
 		Professeur.objects.create(nom = createProfesseur[c][0], prenom = createProfesseur[c][1], email = createProfesseur[c][2])	
 
-# createHoraire = [ [Datetime('2021-12-22'), DateTime('00:09:00'), "mysql", "Blindcode 4data"], ['22/12/2021', '00:12:45', "python", "Blindcode 4data"], ['23/12/2021', '00:09:00', "recherche d'emploi", "Blindcode 4data"], ['23/12/2021', '00:12:45', "django", "Blindcode 4data"], ['24/12/2021', '00:09:00', "python", "Blindcode 4data"] ]
+createHoraire = [ 
+['2021-12-22', '00:09:00', Matiere.objects.get(nom="mysql").id, "Blindcode 4data"], 
+['2021-12-22', '00:12:45', Matiere.objects.get(nom="python").id, "Blindcode 4data"], 
+['2021-12-23', '00:09:00', Matiere.objects.get(nom="recherche d'emploi").id, "Blindcode 4data"], 
+['2021-12-23', '00:12:45', Matiere.objects.get(nom="django").id, "Blindcode 4data"], 
+['2021-12-24', '00:09:00', Matiere.objects.get(nom="python").id, "Blindcode 4data"] ]
 
-# for c in range(len(createHoraire)): 
-# 	try:
-# 		Horaire.objects.get(joursDeCours = createHoraire[c][0])
-# 	except:
-# 		Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere  = 2, formations = 1)	
+for c in range(len(createHoraire)): 
+	try:
+		Horaire.objects.get(joursDeCours = createHoraire[c][0], matiere = createHoraire[c][2])
+	except:
+		currentHoraire = Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere_id = createHoraire[c][2])	
+		# currentHoraire.matiere.add(createHoraire[c][2])
 
-createMatiere= [ ["mysql", datetime(/second=180000), datetime(/second=36000), datetime(/second=10800), Professeur.objects.get(nom = "Piette")],  ["python", datetime(/second=900000), datetime(/second=360000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["django", datetime(/second=144000), datetime(/second=72000), datetime(/second=10800), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(/second=54000), datetime(/second=18000), datetime(/second=10800), Professeur.objects.get(nom = "Goraj")] ]
-# createMatiere= [ ["mysql", 180000, 36000, 10800, Professeur.objects.get(nom = "Piette")],  ["python", 900000, 360000, 10800, Professeur.objects.get(nom = "Dupont")], ["django", 144000, 72000, 10800, Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", 54000, 18000, 10800, Professeur.objects.get(nom = "Goraj")] ]
-# createMatiere= [ ["mysql", datetime(50:00), datetime("10:00"), datetime(03:00), Professeur.objects.get(nom = "Piette")],  ["python", datetime(250), datetime(100), datetime(03), Professeur.objects.get(nom = "Dupont")], ["django", datetime(40), datetime(20), datetime(03), Professeur.objects.get(nom = "Dupont")], ["recherche d'emploi", datetime(15), datetime(05), datetime(03), Professeur.objects.get(nom = "Goraj")] ]
-# timestamp = time.mktime(time.strptime('22:24:46', '%Y-%m-%d %H:%M:%S'))
 
+createMatiere= [ 
+	["mysql", datetime.timedelta(hours = 18000), datetime.timedelta(hours =36000), datetime.timedelta(hours =10800), Professeur.objects.get(nom = "Piette")],  
+["python", datetime.timedelta(hours =900000), datetime.timedelta(hours =360000), datetime.timedelta(hours =10800), Professeur.objects.get(nom = "Dupont")], 
+["django",datetime.timedelta(hours =144000), datetime.timedelta(hours =72000), datetime.timedelta(hours =10800), Professeur.objects.get(nom = "Dupont")], 
+["recherche d'emploi", datetime.timedelta(hours =54000), datetime.timedelta(hours =18000), datetime.timedelta(hours =10800), Professeur.objects.get(nom = "Goraj")] ]
+
+# createMatiere= [ 
+# 	["mysql", datetime.timedelta(hours = 50:00), datetime.timedelta(hours = 10:00), datetime.timedelta(hours = 03:00), Professeur.objects.get(nom = "Piette")],  
+# 	["python", datetime.timedelta(hours = 250:00), datetime.timedelta(hours = 100:00), datetime.timedelta(hours = 03:00), Professeur.objects.get(nom = "Dupont")], 
+# 	["django", datetime.timedelta(hours = 40:00), datetime.timedelta(hours = 20:00), datetime.timedelta(hours = 03:00), Professeur.objects.get(nom = "Dupont")], 
+# 	["recherche d'emploi", datetime.timedelta(hours = 15:00), datetime.timedelta(hours = 05:00), datetime.timedelta(hours = 03:00), Professeur.objects.get(nom = "Goraj")] ]
 
 for c in range(len(createMatiere)): 
 	try:
 		Matiere.objects.get(nom = createMatiere[c][0])
 	except:
 		currentMatiere = Matiere.objects.create(nom = createMatiere[c][0], dureeTotale = createMatiere[c][1], dureeEnCour = createMatiere[c][2], dureeQuotidienne = createMatiere[c][3] )	
-		currentMatiere.professeur.set(createMatiere[c][4])
+		currentMatiere.professeur.add(createMatiere[c][4])
 
 # # for s in series: 
 # #     try :
