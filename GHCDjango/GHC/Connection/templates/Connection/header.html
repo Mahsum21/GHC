@@ -36,7 +36,9 @@
                                     </div>
                                     <div class="d-none d-lg-block">
                                         <span class='sr-only' >téléphone</span>
-                                        <a class="boxed-btn4" href="{% static 'connection/#' %}">mon Profil</a>
+                                        {% if expediteur %}
+                                        <a class="boxed-btn4" href=""> {{ expediteur.nom }} </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
