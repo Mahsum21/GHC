@@ -52,13 +52,12 @@ def Tchat(request, id1=0, id2=0):
         destinataire= Personne.objects.filter(pk = id2)
     datas = Personne.objects.all()
     messages = (Message.objects.filter(expediteur=id1, destinataire=id2) | Message.objects.filter(expediteur=id2, destinataire=id1)).order_by('date')
-    from datetime import datetime
     context = {
         'datas': datas, 
         'expediteur': expediteur[0], 
         'destinataire': destinataire[0], 
         'messages': messages,
-        'test':messages[0].date.strftime('%H:%M:%S')
+        # 'test':messages[0].date.strftime('%H:%M:%S')
     }
     return render(request,'connection/tchat/tchat.html',context)
 
