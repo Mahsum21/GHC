@@ -5,14 +5,14 @@
         <div class="" >
         {% for message in messages %}
         {% if message.expediteur == expediteur.id %}
-        <p class="bg-primary">
+        <p class="bg-primary text-white">
             <span class="text-white font-weight-bold font-italic" > 
-                {{ expediteur.nom }} (  ): </span> <br>
+                {{ expediteur.nom }} () : </span> <br>
             {{ message.message }}
         </p>
         {% else %}
-        <p class="bg-success">
-            <span class="text-white font-weight-bold font-italic" >
+        <p class="bg-white text-dark">
+            <span class="text-dark font-weight-bold font-italic" >
                 {{ destinataire.nom }} (  ): </span> <br>
             {{ message.message }}    
         </p>
