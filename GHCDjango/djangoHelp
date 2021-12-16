@@ -4,6 +4,7 @@ B-  lancer le server django
     $ python manage.py runserver
     $ ./manage.py runserver
 
+
 -------------------------------------------------------------------------------------------
 1-  créer un repertoire de travail : 
     $ mkdir djangoWS

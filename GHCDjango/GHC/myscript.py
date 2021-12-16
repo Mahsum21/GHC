@@ -3,19 +3,19 @@ import time
 from Connection.models import Personne, Formation, Professeur, Horaire, Matiere 
 
 createPersonne = [ 
-	["Sana", "Eleonore", "etudiant", "e.sana@gmail.com"], 
-	["Kizmaz", "Mahsum", "mahsumkizmaz@gmail.com"], 
-	["Tcheuyasi", "Isaac", "t.isaac@gmail.com"], 
-	["Bakashika", "Jessie", "j.bakashika@gmail.com"], 
-	["Borsen", "Maxime", "m.borsen@gmail.com"], 
-	["dufrane", "allain", "d.alain@gmail.com"] ]
+	["Sana", "Eleonor", "etudiant", "e.sana@gmail.com", "es"], 
+	["Kizmaz", "Mahsum", "etudiant", "mahsumkizmaz@gmail.com", "mk"], 
+	["Tcheuyasi", "Isaac", "etudiant", "t.isaac@gmail.com", "it"], 
+	["Bakashika", "Jessie", "etudiant", "j.bakashika@gmail.com", "jb"], 
+	["Borsen", "Maxime", "etudiant", "m.borsen@gmail.com", "mb"], 
+	["dufrane", "allain", "etudiant", "a.dufrane@gmail.com", "ad"] ]
 
 for c in range(len(createPersonne)): 
 	# for j in c : 
 	try:
-		Personne.objects.get(email = createPersonne[c][2])
+		Personne.objects.get(email = createPersonne[c][3], mdp = createPersonne[c][4])
 	except:
-		Personne.objects.create(nom = createPersonne[c][0], prenom = createPersonne[c][1], email = createPersonne[c][2])	
+		Personne.objects.create(nom = createPersonne[c][0], prenom = createPersonne[c][1], fonction = createPersonne[c][2], email = createPersonne[c][3], mdp = createPersonne[c][4])	
 
 createFormation = [ 
 	["Blindcode 4data", "LLN"], 
@@ -29,29 +29,15 @@ for c in range(len(createFormation)):
 		Formation.objects.create(nom = createFormation[c][0], lieu = createFormation[c][1], responsable_id = 1)	
 
 createProfesseur = [ 
-	["Dupont", "Philip", "d.philip@eqlas.be"], 
-	["Piette", "Jonny", "p.jonny@eqlas.be"], 
-	["Goraj", "Sylviane", "s.goraj@forem.be"] ]
+	["Dupont", "Philip", "professeur", "p.dupont@eqla.be", "dp"], 
+	["Piette", "Johnny", "professeur", "j.piette@eqla.be", "pj"], 
+	["Goraj", "Sylviane", "professeur", "s.goraj@forem.be", "gs"] ]
 
 for c in range(len(createProfesseur)): 
 	try:
-		Professeur.objects.get(email = createProfesseur[c][2])
+		Professeur.objects.get(email = createProfesseur[c][3], mdp = createProfesseur[c][4])
 	except:
-		Professeur.objects.create(nom = createProfesseur[c][0], prenom = createProfesseur[c][1], email = createProfesseur[c][2])	
-
-createHoraire = [ 
-['2021-12-22', '00:09:00', Matiere.objects.get(nom="mysql").id, "Blindcode 4data"], 
-['2021-12-22', '00:12:45', Matiere.objects.get(nom="python").id, "Blindcode 4data"], 
-['2021-12-23', '00:09:00', Matiere.objects.get(nom="recherche d'emploi").id, "Blindcode 4data"], 
-['2021-12-23', '00:12:45', Matiere.objects.get(nom="django").id, "Blindcode 4data"], 
-['2021-12-24', '00:09:00', Matiere.objects.get(nom="python").id, "Blindcode 4data"] ]
-
-for c in range(len(createHoraire)): 
-	try:
-		Horaire.objects.get(joursDeCours = createHoraire[c][0], matiere = createHoraire[c][2])
-	except:
-		currentHoraire = Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere_id = createHoraire[c][2])	
-		# currentHoraire.matiere.add(createHoraire[c][2])
+		Professeur.objects.create(nom = createProfesseur[c][0], prenom = createProfesseur[c][1], fonction = createProfesseur[c][2], email = createProfesseur[c][3], mdp = createProfesseur[c][4])	
 
 
 createMatiere= [ 
@@ -73,23 +59,17 @@ for c in range(len(createMatiere)):
 		currentMatiere = Matiere.objects.create(nom = createMatiere[c][0], dureeTotale = createMatiere[c][1], dureeEnCour = createMatiere[c][2], dureeQuotidienne = createMatiere[c][3] )	
 		currentMatiere.professeur.add(createMatiere[c][4])
 
-# # for s in series: 
-# #     try :
-# #         maSerie = Serie.objects.get(title = s)
-# #     except:
-# #         maSerie = Serie.objects.create(title= s )
-# #     idx = series.index(s)
-# #     auts = auteurs[idx]
-# #     maSerie.picture = urls[idx]
-# #     maSerie.save()
-# #     for j in auts: 
-# #         aut = Creator.objects.get(name = j )
-# #         maSerie.creators.add(aut)
 
+createHoraire = [ 
+['2021-12-22', '00:09:00', Matiere.objects.get(nom="mysql").id, "Blindcode 4data"], 
+['2021-12-22', '00:12:45', Matiere.objects.get(nom="python").id, "Blindcode 4data"], 
+['2021-12-23', '00:09:00', Matiere.objects.get(nom="recherche d'emploi").id, "Blindcode 4data"], 
+['2021-12-23', '00:12:45', Matiere.objects.get(nom="django").id, "Blindcode 4data"], 
+['2021-12-24', '00:09:00', Matiere.objects.get(nom="python").id, "Blindcode 4data"] ]
 
-# # #  select myfirstapp_Serie.title, myfirstapp_Creator.name from myfirstapp_Serie_creators 
-# # #  inner join myfirstapp_Serie on   myfirstapp_Serie_creators.serie_id = myfirstapp_Serie.title 
-# # #  inner join myfirstapp_creator  on myfirstapp_Serie_creators.creator_id = myfirstapp_Creator.name;
-
-
-	
+for c in range(len(createHoraire)): 
+	try:
+		Horaire.objects.get(joursDeCours = createHoraire[c][0], matiere = createHoraire[c][2])
+	except:
+		currentHoraire = Horaire.objects.create(joursDeCours = createHoraire[c][0], heureDeDebut  = createHoraire[c][1], matiere_id = createHoraire[c][2])	
+		
