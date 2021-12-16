@@ -51,7 +51,7 @@ def Tchat(request, id1=0, id2=0):
     if id2 >0:
         destinataire= Personne.objects.filter(pk = id2)
     datas = Personne.objects.all()
-    messages = Message.objects.filter(expediteur=id1, destinataire=id2).order_by('-date') | Message.objects.filter(expediteur=id2, destinataire=id1).order_by('-date')
+    messages = (Message.objects.filter(expediteur=id1, destinataire=id2) | Message.objects.filter(expediteur=id2, destinataire=id1)).order_by('date')
     context = {
         'datas': datas, 
         'expediteur': expediteur[0], 
