@@ -22,10 +22,10 @@ from Connection import views
 
 urlpatterns = [
     # re_path(r'^$', include('Connection.urls', namespace="ghc"), name="ghc" ),
-    # re_path(r'^connect/', include('Connection.urls')),
     # re_path(r'^admin/', include('Admin.urls')),
     # re_path(r'^horaires/', include('Horaires.urls')),
     path('', include('Connection.urls', namespace="ghc"), name="ghc"),
+    path('administration/', admin.site.urls),
 ]
 if settings.DEBUG : 
     import debug_toolbar
