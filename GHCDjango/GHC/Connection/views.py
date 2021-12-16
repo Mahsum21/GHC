@@ -40,7 +40,9 @@ def TchatConnect(request):
     return redirect('/')
 
 def Tchat(request, id1=0, id2=0):
-    if request.method == 'POST':
+    oldMessage= Message.objects.filter(expediteur = id1).order_by('-id')[0].message
+    # oldMessage= Message.objects.filter(expediteur = id1).last().get()
+    if ((request.method == 'POST') and (oldMessage != request.POST.get('message'))):
         Message.objects.create(
             message = request.POST.get('message'), 
             expediteur = id1, 
